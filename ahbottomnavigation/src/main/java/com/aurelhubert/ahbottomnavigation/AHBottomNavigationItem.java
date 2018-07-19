@@ -20,6 +20,7 @@ public class AHBottomNavigationItem {
 	private String title = "";
 	private Drawable drawable;
 	private int color = Color.GRAY;
+	private boolean tinting = true;
 	
 	private
 	@StringRes
@@ -144,5 +145,13 @@ public class AHBottomNavigationItem {
 	public void setDrawable(Drawable drawable) {
 		this.drawable = drawable;
 		this.drawableRes = 0;
+	}
+
+	public boolean isTinting() {
+		return tinting;
+	}
+
+	public void setTinting(boolean tinting) {
+		this.tinting = tinting;
 	}
 }
