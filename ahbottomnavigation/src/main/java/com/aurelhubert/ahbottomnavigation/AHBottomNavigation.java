@@ -480,8 +480,6 @@ public class AHBottomNavigation extends FrameLayout {
                 if (items.get(i).isTinting()) {
                     icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
                             current ? itemActiveColor : itemInactiveColor, forceTint));
-                } else {
-                    icon.setImageDrawable(items.get(i).getDrawable(context));
                 }
                 title.setTextColor(current ? itemActiveColor : itemInactiveColor);
                 view.setSoundEffectsEnabled(soundEffectsEnabled);
@@ -601,8 +599,6 @@ public class AHBottomNavigation extends FrameLayout {
                 if (items.get(i).isTinting()) {
                     icon.setImageDrawable(AHHelper.getTintDrawable(items.get(i).getDrawable(context),
                             currentItem == i ? itemActiveColor : itemInactiveColor, forceTint));
-                } else {
-                    icon.setImageDrawable(items.get(i).getDrawable(context));
                 }
                 title.setTextColor(currentItem == i ? itemActiveColor : itemInactiveColor);
                 title.setAlpha(currentItem == i ? 1 : 0);
@@ -749,7 +745,7 @@ public class AHBottomNavigation extends FrameLayout {
                 AHHelper.updateLeftMargin(notification, notificationActiveMarginLeft, notificationInactiveMarginLeft);
                 AHHelper.updateTextColor(title, itemActiveColor, itemInactiveColor);
                 AHHelper.updateTextSize(title, activeSize, inactiveSize);
-                if (items.get(itemIndex).isTinting())
+                if (items.get(currentItem).isTinting())
                     AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
                             itemActiveColor, itemInactiveColor, forceTint);
             }
@@ -884,7 +880,7 @@ public class AHBottomNavigation extends FrameLayout {
                 }
 
                 AHHelper.updateAlpha(title, 1, 0);
-                if (items.get(itemIndex).isTinting())
+                if (items.get(currentItem).isTinting())
                     AHHelper.updateDrawableColor(context, items.get(currentItem).getDrawable(context), icon,
                             itemActiveColor, itemInactiveColor, forceTint);
             }
